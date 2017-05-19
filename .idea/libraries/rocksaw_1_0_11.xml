@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="rocksaw-1.0.11">
+    <CLASSES />
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$/lib" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>
