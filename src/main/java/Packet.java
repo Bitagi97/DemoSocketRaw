@@ -2,7 +2,7 @@
 public class Packet {
     public int SourcePort;
     public int DestinationPort;
-    public String Checksum;
+    public int Checksum;
     public int Length;
     public boolean isACK;
     public String message;
@@ -20,12 +20,13 @@ public class Packet {
         Length = Lenth;
         isACK = isack;
         message = msg;
+        setChecksum();
     }
     public void setChecksum(){
         int check = (((SourcePort % base + DestinationPort%base)%base + Length%base)%base +(isACK ? 1 : 0)) %base;
         for(int i=0;i<Length;i++)
             check = (check+(int)message.charAt(i))%base;
-        Checksum = Integer.toString(check);
+        Checksum = check;
     }
     public String toString(){
         //String s = new String();
